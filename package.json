@@ -1,0 +1,18 @@
+{
+  "name": "react-native-extra",
+  "version": "1.0.1",
+  "main": "modules/index.js",
+  "license": "MIT",
+  "dependencies": {
+    "@types/color-string": "^1.5.0",
+    "color-string": "^1.5.3",
+    "sharp": "^0.23.0"
+  },
+  "devDependencies": {
+    "@types/react-native-community__cli": "^2.0.0",
+    "@types/sharp": "^0.22.2",
+    "prettier": "^1.18.2",
+    "ts-node": "^8.3.0",
+    "typescript": "^3.5.3"
+  }
+}
