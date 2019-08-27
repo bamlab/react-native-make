@@ -1,22 +1,22 @@
-# React-native-extra
+# React Native Make
 
 # Description
 
-react-native-extra is a plugin of react-native which generates icons and splashscreen.
+react-native-make is a plugin of react-native offers access to a set on everyday tools to facilitate React Native development
 
 # Setup
 
-- install [react-native-make](../README.md) or pull latest version
-- `cd react-native-make/packages/react-native-extra`
+- Install [react-native-make](../README.md) or pull latest version
+- `cd react-native-make/packages/react-native-make`
 - `yarn link`
-- launch a new project with `react-native init`
+- Launch a new project with `react-native init`
 - Install [`react-native-splash-screen`](https://github.com/crazycodeboy/react-native-splash-screen)
-- in the package.json of your new project, in dependencies add "react-native-extra" : "0.0.1"
-- in your project, `yarn link react-native-extra`
+- In the package.json of your new project, in dependencies add "react-native-make" : "0.0.1"
+- In your project, `yarn link react-native-make`
 
 ## To generate icons
 
-- `react-native set-icon --path path-to-folder-with-image`
+- `react-native make set-icon --path path-to-folder-with-image`
 
 ⚠️ Requirements :
 
@@ -31,7 +31,7 @@ For android, this command will generate the images in main directory : android/a
 
 ## To generate icons on ios
 
-- `react-native set-icon --platform ios --path path-to-folder-with-image`
+- `react-native make set-icon --platform ios --path path-to-folder-with-image`
 
 ⚠️ Requirements :
 
@@ -43,7 +43,7 @@ For android, this command will generate the images in main directory : android/a
 
 ## To generate icons on android
 
-- `react-native set-icon --platform android --path path-to-folder-with-image`
+- `react-native make set-icon --platform android --path path-to-folder-with-image`
 
 ⚠️ Requirements :
 
@@ -58,7 +58,7 @@ This command will generate the images in main directory : android/app/src/main/r
 
 From Android 8.0, we use android's adaptive icons. With a transparent picture, you can chose the color of the background with :
 
-- `react-native set-icon --platform android --path path-to-folder-with-image --background color`  
+- `react-native make set-icon --platform android --path path-to-folder-with-image --background color`  
   ⚠️ by default, on android, the background of a transparent image is white
 
 ## To generate your splash screen
@@ -66,18 +66,18 @@ From Android 8.0, we use android's adaptive icons. With a transparent picture, y
 ⚠️ [`react-native-splash-screen`](https://github.com/crazycodeboy/react-native-splash-screen) is a prerequisite to use this cli plugin.  
 Install it before carrying on
 
-- `react-native set-splash --path path-to-folder-with-image --background background-color`  
+- `react-native make set-splash --path path-to-folder-with-image --background background-color`  
   ⚠️ The path option is mandatory.  
   The background color defaults to white
 
 ## To generate your splash screen on ios
 
-- `react-native set-splash --platform ios --path path-to-folder-with-image --background background-color`  
+- `react-native make set-splash --platform ios --path path-to-folder-with-image --background background-color`  
   ⚠️ The path option is mandatory.
 
 ## To generate your splash screen on android
 
-- `react-native set-splash --platform android --path path-to-folder-with-image --background background-color`  
+- `react-native make set-splash --platform android --path path-to-folder-with-image --background background-color`  
   ⚠️ The path option is mandatory.
 
 ### Additional mandatory steps
