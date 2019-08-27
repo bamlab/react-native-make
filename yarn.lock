@@ -12,6 +12,11 @@
   resolved "https://registry.yarnpkg.com/@types/node/-/node-12.6.9.tgz#ffeee23afdc19ab16e979338e7b536fdebbbaeaf"
   integrity sha512-+YB9FtyxXGyD54p8rXwWaN1EWEyar5L58GlGWgtH2I9rGmLGBQcw63+0jw+ujqVavNuO47S1ByAjm9zdHMnskw==
 
+"@types/react-native-community__cli@^2.0.0":
+  version "2.0.0"
+  resolved "https://registry.yarnpkg.com/@types/react-native-community__cli/-/react-native-community__cli-2.0.0.tgz#52a29aac7f400d50b3621d194c153f22df5d29a9"
+  integrity sha512-i9QNM3nn/FxxBALiLWSI9qdtrAf6fux1LTt210KJ6U0Psio7C3TIW0aeC82lD2n8FgDakBY47V5W1IC83EBrGQ==
+
 "@types/sharp@^0.22.2":
   version "0.22.2"
   resolved "https://registry.yarnpkg.com/@types/sharp/-/sharp-0.22.2.tgz#c9b613816ec000d94f153259b25ae41f874a75f5"

@@ -1,11 +1,11 @@
 import { addIosIcon } from './ios/service';
 import { addAndroidIcon } from './android/service';
-import { ConfigT } from '../../rn-plugin.types';
+import { Config } from '@react-native-community/cli';
 import { EPlatform } from '../../services/type';
 
 export const setIconCommand = async (
   argv: string[],
-  config: ConfigT,
+  config: Config,
   args: Record<string, any>
 ) => {
   const { path, platform, background } = args;

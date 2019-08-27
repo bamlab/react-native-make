@@ -1,5 +1,5 @@
 import { setIconCommand, setSplashScreenCommand } from './modules';
-import { UserDependencyConfigT } from './rn-plugin.types';
+import { UserDependencyConfig } from '@react-native-community/cli';
 import { EPlatform } from './services/type';
 
 const options = [
@@ -19,7 +19,7 @@ const options = [
   },
 ];
 
-export const rnPluginConfig: UserDependencyConfigT = {
+export const rnPluginConfig: UserDependencyConfig = {
   commands: [
     {
       name: 'set-icon',

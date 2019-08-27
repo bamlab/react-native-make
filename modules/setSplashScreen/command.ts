@@ -1,11 +1,11 @@
-import { ConfigT } from '../../rn-plugin.types';
+import { Config } from '@react-native-community/cli';
 import { addIosSplashScreen } from './ios/service';
 import { EPlatform } from '../../services/type';
 import { addAndroidSplashScreen } from './android/service';
 
 export const setSplashScreenCommand = async (
   argv: string[],
-  config: ConfigT,
+  config: Config,
   args: Record<string, any>
 ) => {
   const { path: imagePath, platform, background: backgroundColor } = args;
