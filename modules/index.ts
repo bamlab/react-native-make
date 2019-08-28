@@ -1,2 +1,2 @@
-export { setSplashScreenTask } from './setSplashScreen/setSplashScreen.task';
 export { setIconCommand } from './setIcon/setIcon.command';
+export { setSplashScreenCommand } from './setSplashScreen/setSplashScreen.command';
