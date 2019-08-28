@@ -1,6 +1,6 @@
 {
   "name": "@bam.tech/react-native-make",
-  "version": "1.0.0-rc5",
+  "version": "1.0.0-rc6",
   "main": "modules/index.js",
   "license": "MIT",
   "scripts": {
