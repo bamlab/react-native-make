@@ -3,7 +3,6 @@
     "release": true
   },
   "git": {
-    "commitMessage": ":bookmark: prepare ${version}",
-    "requireUpstream": false
+    "commitMessage": ":bookmark: prepare ${version}"
   }
 }
