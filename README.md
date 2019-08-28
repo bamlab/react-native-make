@@ -6,13 +6,10 @@ react-native-make is a plugin of react-native offers access to a set on everyday
 
 # Setup
 
-- Install [react-native-make](../README.md) or pull latest version
-- `cd react-native-make/packages/react-native-make`
-- `yarn link`
-- Launch a new project with `react-native init`
-- Install [`react-native-splash-screen`](https://github.com/crazycodeboy/react-native-splash-screen)
-- In the package.json of your new project, in dependencies add "react-native-make" : "0.0.1"
-- In your project, `yarn link react-native-make`
+```
+yarn add -D @bam.tech/react-native-make
+npm i -D @bam.tech/react-native-make
+```
 
 ## To generate icons
 
@@ -92,16 +89,12 @@ import SplashScreen from 'react-native-splash-screen';
 SplashScreen.hide();
 ```
 
-## TODO :
+## Local development
 
-- Write tests in Jest
-
-- Centralize error codes. Improve the feedback given to the cli users.
-
-- Force icon size to be at least 1024x1024 --> for the moment, it is written in readme and description
-
-- Check if the image is transparent with sharp when using an icon on ios. To bloc users from using a transparent image on ios icon --> for the moment, it is written in readme and description
-
-- Automatically install `react-native-splash-screen`
-
-- Publish :)
+- Pull latest version
+- `cd react-native-make`
+- `yarn link`
+- Launch a new project with `react-native init`
+- Install [`react-native-splash-screen`](https://github.com/crazycodeboy/react-native-splash-screen)
+- In your React Native project, `yarn link @bam.tech/react-native-make`
+- In the package.json of your React Native project, in dependencies add "@bam.tech/react-native-make" : "0.0.0"
