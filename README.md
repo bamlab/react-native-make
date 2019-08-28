@@ -1,10 +1,10 @@
 # React Native Make
 
-# Description
+## Description
 
 react-native-make is a plugin of react-native offers access to a set on everyday tools to facilitate React Native development
 
-# Setup
+## Setup
 
 ```
 yarn add -D @bam.tech/react-native-make
