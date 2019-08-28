@@ -1,7 +1,7 @@
-import { setIconTask } from './setIcon.task';
-import { logo } from '../../logo';
 import { Command } from '@react-native-community/cli';
+import { logo } from '../../logo';
 import { EPlatform } from '../../services/type';
+import { setIconTask } from './setIcon.task';
 
 const iconDesc =
   'Requirements : \n - image has to be square \n - formats accepted : png and jpeg \n - min size 1024x1024 \n - no transparent image for ios  \n - for android use adaptive icons guidelines : https://medium.com/google-design/designing-adaptive-icons-515af294c783';
