@@ -5,8 +5,9 @@
   "license": "MIT",
   "scripts": {
     "prepublishOnly": "rm -rf dist && yarn tsc",
-    "test:typings": "yarn tsc --noEmit",
-    "test": "yarn test:typings"
+    "test:types": "yarn tsc --noEmit",
+    "test": "yarn test:types",
+    "release": "release-it"
   },
   "dependencies": {
     "color-string": "^1.5.3",
@@ -20,6 +21,7 @@
     "@types/sharp": "^0.22.2",
     "@types/universal-analytics": "^0.4.3",
     "prettier": "^1.18.2",
+    "release-it": "^12.3.6",
     "ts-node": "^8.3.0",
     "typescript": "^3.5.3"
   }
