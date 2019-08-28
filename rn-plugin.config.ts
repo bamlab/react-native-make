@@ -1,4 +1,4 @@
-import { setIconCommand, setSplashScreenCommand } from './modules';
+import { setIconTask, setSplashScreenCommand } from './modules';
 import { UserDependencyConfig } from '@react-native-community/cli';
 import { EPlatform } from './services/type';
 
@@ -23,9 +23,7 @@ export const rnPluginConfig: UserDependencyConfig = {
   commands: [
     {
       name: 'set-icon',
-      func: setIconCommand,
-      description:
-        'Requirements : \n - image has to be square \n - formats accepted : png and jpeg \n - min size 1024x1024 \n - no transparent image for ios  \n - for android use adaptive icons guidelines : https://medium.com/google-design/designing-adaptive-icons-515af294c783',
+      func: setIconTask,
       options,
     },
     {

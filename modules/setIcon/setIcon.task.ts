@@ -3,11 +3,7 @@ import { addAndroidIcon } from './android/service';
 import { Config } from '@react-native-community/cli';
 import { EPlatform } from '../../services/type';
 
-export const setIconCommand = async (
-  argv: string[],
-  config: Config,
-  args: Record<string, any>
-) => {
+export const setIconTask = async (argv: string[], config: Config, args: Record<string, any>) => {
   const { path, platform, background } = args;
   switch (platform) {
     case EPlatform.IOS:
