@@ -98,3 +98,7 @@ SplashScreen.hide();
 - Install [`react-native-splash-screen`](https://github.com/crazycodeboy/react-native-splash-screen)
 - In your React Native project, `yarn link @bam.tech/react-native-make`
 - In the package.json of your React Native project, in dependencies add "@bam.tech/react-native-make" : "0.0.0"
+
+## Disclaimer
+
+_To better understand your usage of this tool, basic analytics have been enabled. It only records commands usage as anonymous page views and does not identify users in any way_

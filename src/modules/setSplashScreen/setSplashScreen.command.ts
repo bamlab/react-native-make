@@ -1,14 +1,12 @@
 import { Command } from '@react-native-community/cli';
 import { logo } from '../../logo';
+import { trackTask } from '../../services/analytics';
 import { EPlatform } from '../../services/type';
 import { setSplashScreenTask } from './setSplashScreen.task';
 
-const splashDesc =
-  'Requirements : \n - react-native-splash-screen is a prerequisite to use this plugin';
-
 export const setSplashScreenCommand: Command = {
   name: 'set-splash',
-  func: setSplashScreenTask,
+  func: trackTask('/set-splash', setSplashScreenTask),
   description: logo + ' generate app splash screen',
   options: [
     {
