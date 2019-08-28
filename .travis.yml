@@ -14,4 +14,4 @@ jobs:
       script:
         - echo $NPM_TOKEN
         - echo "//registry.npmjs.org/:_authToken=$NPM_TOKEN" > .npmrc
-        - yarn release --preRelease=rc
+        - npm run release --preRelease=rc
