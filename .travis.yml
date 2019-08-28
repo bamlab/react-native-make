@@ -12,6 +12,5 @@ jobs:
     - stage: deploy
       if: type = push AND branch = master
       script:
-        - echo $NPM_TOKEN
         - echo "//registry.npmjs.org/:_authToken=$NPM_TOKEN" > .npmrc
         - npm run release --preRelease=rc

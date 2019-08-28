@@ -1,5 +1,9 @@
 {
   "github": {
     "release": true
+  },
+  "git": {
+    "commitMessage": ":bookmark: prepare ${version}",
+    "requireUpstream": false
   }
 }
