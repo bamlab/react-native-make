@@ -1,4 +1,4 @@
-import { setIconTask, setSplashScreenCommand } from './modules';
+import { setIconTask, setSplashScreenTask } from './modules';
 import { UserDependencyConfig } from '@react-native-community/cli';
 import { EPlatform } from './services/type';
 
@@ -28,9 +28,7 @@ export const rnPluginConfig: UserDependencyConfig = {
     },
     {
       name: 'set-splash',
-      func: setSplashScreenCommand,
-      description:
-        'Requirements : \n - react-native-splash-screen is a prerequisite to use this plugin',
+      func: setSplashScreenTask,
       options,
     },
   ],

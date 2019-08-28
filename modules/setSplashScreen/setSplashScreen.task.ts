@@ -3,7 +3,7 @@ import { addIosSplashScreen } from './ios/service';
 import { EPlatform } from '../../services/type';
 import { addAndroidSplashScreen } from './android/service';
 
-export const setSplashScreenCommand = async (
+export const setSplashScreenTask = async (
   argv: string[],
   config: Config,
   args: Record<string, any>
