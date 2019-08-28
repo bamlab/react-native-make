@@ -10,9 +10,7 @@ const res = lstatSync(resolve('.', 'node_modules', '@bam.tech', 'react-native-ma
 if (res.isSymbolicLink()) {
   console.warn('Detected linked install of react-native-make, compiling at runtime...');
   require('ts-node').register({ project: resolve(__dirname, `tsconfig.json`) });
-  const { rnPluginConfig } = require('./src/rn-plugin.config');
-
-  module.exports = rnPluginConfig;
+  module.exports = require('./src/rn-plugin.config').rnPluginConfig;
 } else {
-  module.exports = require('./dist/rn-plugin.config.js');
+  module.exports = require('./dist/rn-plugin.config.js').rnPluginConfig;
 }
