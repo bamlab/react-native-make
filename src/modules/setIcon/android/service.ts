@@ -28,7 +28,7 @@ const generateLegacyIcons = (iconSource: string) =>
 
 const generateAdaptiveIcons = (iconSource: string, backgroundColor: string) => {
   replaceInFile(
-    join(__dirname, `../../../templates/android/values/colors-icon.xml`),
+    join(__dirname, `../../../../templates/android/values/colors-icon.xml`),
     `${ANDROID_MAIN_RES_PATH}/values/colors-icon.xml`,
     [
       {
@@ -68,7 +68,7 @@ const generateAdaptiveIcons = (iconSource: string, backgroundColor: string) => {
 const generateAdaptiveIcon = (iconSource: string, density: string, value: number) => {
   const destinationDirectoryPath = `${ANDROID_MAIN_RES_PATH}/mipmap-${density}-v26`;
   copyFile(
-    join(__dirname, `../../../templates/android/mipmap/ic_launcher.xml`),
+    join(__dirname, `../../../../templates/android/mipmap/ic_launcher.xml`),
     `${destinationDirectoryPath}/ic_launcher.xml`
   );
   return generateResizedAssets(iconSource, `${destinationDirectoryPath}/ic_foreground.png`, value);

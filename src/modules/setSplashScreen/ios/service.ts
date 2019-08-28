@@ -42,7 +42,7 @@ const addSplashScreenXib = (backgroundColor: string) => {
   const packageJson = require(join(process.cwd(), './package'));
 
   replaceInFile(
-    join(__dirname, '../../../templates/ios/LaunchScreen.xib'),
+    join(__dirname, '../../../../templates/ios/LaunchScreen.xib'),
     `./ios/${packageJson.name}/Base.lproj/LaunchScreen.xib`,
     [
       {

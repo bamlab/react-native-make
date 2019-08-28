@@ -16,7 +16,7 @@ export const addAndroidSplashScreen = async (imageSource: string, backgroundColo
 
 const addLaunchScreenBackgroundColor = (backgroundColor: string) => {
   replaceInFile(
-    join(__dirname, '../../../templates/android/values/colors-splash.xml'),
+    join(__dirname, '../../../../templates/android/values/colors-splash.xml'),
     `${ANDROID_MAIN_RES_PATH}/values/colors-splash.xml`,
     [
       {
@@ -31,16 +31,16 @@ const addReactNativeSplashScreen = (backgroundColor: string) => {
   addLaunchScreenBackgroundColor(backgroundColor);
 
   copyFile(
-    join(__dirname, '../../../templates/android/drawable/splashscreen.xml'),
+    join(__dirname, '../../../../templates/android/drawable/splashscreen.xml'),
     `${ANDROID_MAIN_RES_PATH}/drawable/splashscreen.xml`
   );
   copyFile(
-    join(__dirname, '../../../templates/android/layout/launch_screen.xml'),
+    join(__dirname, '../../../../templates/android/layout/launch_screen.xml'),
     `${ANDROID_MAIN_RES_PATH}/layout/launch_screen.xml`
   );
   applyPatch(`${ANDROID_MAIN_RES_PATH}/values/styles.xml`, {
     pattern: /^.*<resources>.*[\r\n]/g,
-    patch: readFile(join(__dirname, '../../../templates/android/values/styles-splash.xml')),
+    patch: readFile(join(__dirname, '../../../../templates/android/values/styles-splash.xml')),
   });
 
   const packageJson = require(join(process.cwd(), './package'));
