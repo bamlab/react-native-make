@@ -1,0 +1,16 @@
+language: node_js
+node_js: lts/*
+cache: yarn
+
+install:
+  - yarn install --pure-lockfile
+
+jobs:
+  include:
+    - stage: test-types
+      script: yarn test:types
+    - stage: deploy
+      if: type = push AND branch = master
+      script:
+        - echo "//registry.npmjs.org/:_authToken=$NPM_TOKEN" > .npmrc
+        - yarn release
