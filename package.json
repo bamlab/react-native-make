@@ -4,7 +4,9 @@
   "main": "modules/index.js",
   "license": "MIT",
   "scripts": {
-    "prepublishOnly": "rm -rf dist && yarn tsc"
+    "prepublishOnly": "rm -rf dist && yarn tsc",
+    "test:typings": "yarn tsc --noEmit",
+    "test": "yarn test:typings"
   },
   "dependencies": {
     "color-string": "^1.5.3",
