@@ -14,5 +14,5 @@ if (res.isSymbolicLink()) {
 
   module.exports = rnPluginConfig;
 } else {
-  module.exports = require('./dist/rn-plugin.config');
+  module.exports = require('./dist/rn-plugin.config.js');
 }
