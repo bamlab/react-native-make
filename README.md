@@ -1,14 +1,14 @@
 <p align="center"><img src="./docs/assets/make-logo.png"></p>
 <h2 align="center">Everyday tools for simpler React Native development</h2>
 
-# ⚙️ Setup
+## ⚙️ Setup
 
 ```
 yarn add -D @bam.tech/react-native-make
 npm i -D @bam.tech/react-native-make
 ```
 
-# 📚 Usage
+## 📚 Usage
 
 Once installed, plugins are available through the React Native CLI
 
@@ -17,7 +17,7 @@ Once installed, plugins are available through the React Native CLI
 |    [set-icon](./docs/set-icon.md) | generate platform specific app icons      |
 | [set-splash](.docs/set-splash.md) | generate platform specific splash screens |
 
-# 💻 Local development
+## 💻 Local development
 
 - Pull latest version
 - `cd react-native-make`
@@ -26,7 +26,7 @@ Once installed, plugins are available through the React Native CLI
 - In your React Native project, `yarn link @bam.tech/react-native-make`
 - In the package.json of your React Native project, in dependencies add "@bam.tech/react-native-make" : "0.0.0"
 
-# 👉 About Bam
+## 👉 About Bam
 
 We are a 100 people company developing and designing multiplatform applications with [React Native](https://www.bam.tech/agence-react-native-paris) using the Lean & Agile methodology. To get more information on the solutions that would suit your needs, feel free to get in touch by [email](mailto://contact@bam.tech) or through or [contact form](https://www.bam.tech/contact)!
 
