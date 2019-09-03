@@ -3,6 +3,18 @@
   "version": "1.0.0",
   "main": "modules/index.js",
   "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/bamlab/react-native-make"
+  },
+  "keywords": [
+    "react-native",
+    "generator",
+    "icons",
+    "splash-screen",
+    "splashscreen",
+    "plugin"
+  ],
   "scripts": {
     "prepublishOnly": "rm -rf dist && yarn tsc",
     "test:types": "yarn tsc --noEmit",
