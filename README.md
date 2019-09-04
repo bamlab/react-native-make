@@ -12,10 +12,10 @@ npm i -D @bam.tech/react-native-make
 
 Once installed, plugins are available through the React Native CLI
 
-|                           Command | Description                               |
-| --------------------------------: | :---------------------------------------- |
-|    [set-icon](./docs/set-icon.md) | generate platform specific app icons      |
-| [set-splash](.docs/set-splash.md) | generate platform specific splash screens |
+|                            Command | Description                               |
+| ---------------------------------: | :---------------------------------------- |
+|     [set-icon](./docs/set-icon.md) | generate platform specific app icons      |
+| [set-splash](./docs/set-splash.md) | generate platform specific splash screens |
 
 ## 💻 Local development
 
