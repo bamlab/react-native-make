@@ -3,4 +3,3 @@ export enum EPlatform {
   ANDROID = 'android',
   ALL = 'all',
 }
-

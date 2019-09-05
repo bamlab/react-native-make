@@ -15,20 +15,20 @@ export const copyFile = (sourcePath: string, destinationPath: string) => {
   copyFileSync(sourcePath, destinationPath);
 };
 
-export const applyPatch = (path: string, { patch, pattern }: { patch: string; pattern: string | RegExp }) => {
-  if(!readFile(path).includes(patch)){
-    writeFileSync(
-      path,
-      readFileSync(path, 'utf8').replace(pattern, match => `${match}${patch}`)
-    );
+export const applyPatch = (
+  path: string,
+  { patch, pattern }: { patch: string; pattern: string | RegExp }
+) => {
+  if (!readFile(path).includes(patch)) {
+    writeFileSync(path, readFileSync(path, 'utf8').replace(pattern, match => `${match}${patch}`));
   }
 };
 
-export const applyPatchByMatchedGroups = (path: string, patch: { patch: string; pattern: string | RegExp }) => {
-  writeFileSync(
-    path,
-    readFileSync(path, 'utf8').replace(patch.pattern, patch.patch)
-  );
+export const applyPatchByMatchedGroups = (
+  path: string,
+  patch: { patch: string; pattern: string | RegExp }
+) => {
+  writeFileSync(path, readFileSync(path, 'utf8').replace(patch.pattern, patch.patch));
 };
 
 export const replaceInFile = (
