@@ -16,10 +16,10 @@
             </subviews>
             <color key="backgroundColor" red="{{background-rgba-red}}" green="{{background-rgba-green}}" blue="{{background-rgba-blue}}" alpha="{{background-rgba-alpha}}" colorSpace="calibratedRGB"/>
             <constraints>
-                <constraint firstAttribute="bottom" secondItem="mLz-pt-VGN" secondAttribute="bottom" constant="10" id="KJO-J3-fkg"/>
-                <constraint firstAttribute="trailing" secondItem="mLz-pt-VGN" secondAttribute="trailing" constant="10" id="eqZ-Y5-FHH"/>
-                <constraint firstItem="mLz-pt-VGN" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" constant="10" id="hVh-5q-gdE"/>
-                <constraint firstItem="mLz-pt-VGN" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" constant="10" id="ofG-hz-s61"/>
+                <constraint firstAttribute="bottom" secondItem="mLz-pt-VGN" secondAttribute="bottom" constant="0" id="KJO-J3-fkg"/>
+                <constraint firstAttribute="trailing" secondItem="mLz-pt-VGN" secondAttribute="trailing" constant="0" id="eqZ-Y5-FHH"/>
+                <constraint firstItem="mLz-pt-VGN" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" constant="0" id="hVh-5q-gdE"/>
+                <constraint firstItem="mLz-pt-VGN" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" constant="0" id="ofG-hz-s61"/>
             </constraints>
         </view>
     </objects>
