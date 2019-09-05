@@ -8,7 +8,7 @@ export const generateResizedAssets = async (
   width: number,
   height: number = width,
   options: ResizeOptions = {
-    fit: 'cover',
+    fit: 'contain',
   }
 ) => {
   createDirectoryIfNotExists(destinationPath);

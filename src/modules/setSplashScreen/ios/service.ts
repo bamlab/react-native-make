@@ -9,10 +9,15 @@ import {
   replaceInFile,
 } from '../../../services/file.processing';
 import { getNormalizedRGBAColors } from '../../../services/color.processing';
+import { EResizeMode } from '../../../services/type';
 
-export const addIosSplashScreen = async (imageSource: string, backgroundColor: string) => {
+export const addIosSplashScreen = async (
+  imageSource: string,
+  backgroundColor: string,
+  resizeMode?: EResizeMode
+) => {
   try {
-    addSplashScreenXib(backgroundColor);
+    addSplashScreenXib(backgroundColor, resizeMode);
     configureSplashScreen();
     const iosSplashImageFolder = addIosImageSetContents('SplashImage', EImageSetType.IMAGE);
     await generateIosSplashImages(imageSource, iosSplashImageFolder);
@@ -37,12 +42,15 @@ const configureSplashScreen = () => {
   }
 };
 
-const addSplashScreenXib = (backgroundColor: string) => {
+const addSplashScreenXib = (
+  backgroundColor: string,
+  resizeMode: EResizeMode = EResizeMode.CONTAIN
+) => {
   const { red, green, blue, alpha } = getNormalizedRGBAColors(backgroundColor);
   const packageJson = require(join(process.cwd(), './package'));
 
   replaceInFile(
-    join(__dirname, '../../../../templates/ios/LaunchScreen.xib'),
+    join(__dirname, `../../../../templates/ios/LaunchScreen.${resizeMode}.xib`),
     `./ios/${packageJson.name}/Base.lproj/LaunchScreen.xib`,
     [
       {
@@ -75,8 +83,7 @@ const generateIosSplashImages = (imageSource: string, iosSplashImageFolder: stri
         size * multiplier,
         size * multiplier,
         {
-          fit: 'contain',
-          background: backgroundColor,
+          fit: 'inside',
         }
       )
     )

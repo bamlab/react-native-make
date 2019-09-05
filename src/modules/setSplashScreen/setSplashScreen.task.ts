@@ -8,18 +8,18 @@ export const setSplashScreenTask = async (
   config: Config,
   args: Record<string, any>
 ) => {
-  const { path: imagePath, platform, background: backgroundColor } = args;
+  const { path: imagePath, platform, background: backgroundColor, resize: resizeMode } = args;
 
   switch (platform) {
     case EPlatform.IOS:
-      await addIosSplashScreen(imagePath, backgroundColor);
+      await addIosSplashScreen(imagePath, backgroundColor, resizeMode);
       break;
     case EPlatform.ANDROID:
-      await addAndroidSplashScreen(imagePath, backgroundColor);
+      await addAndroidSplashScreen(imagePath, backgroundColor, resizeMode);
       break;
     case EPlatform.ALL:
-      await addIosSplashScreen(imagePath, backgroundColor);
-      await addAndroidSplashScreen(imagePath, backgroundColor);
+      await addIosSplashScreen(imagePath, backgroundColor, resizeMode);
+      await addAndroidSplashScreen(imagePath, backgroundColor, resizeMode);
       break;
     default:
       console.log("We don't support this platform yet");

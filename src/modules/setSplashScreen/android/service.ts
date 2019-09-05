@@ -4,10 +4,15 @@ import { join } from 'path';
 import { ANDROID_MAIN_PATH, ANDROID_MAIN_RES_PATH } from '../../config';
 import { generateResizedAssets } from '../../../services/image.processing';
 import { config } from './config';
+import { EResizeMode } from '../../../services/type';
 
-export const addAndroidSplashScreen = async (imageSource: string, backgroundColor: string) => {
+export const addAndroidSplashScreen = async (
+  imageSource: string,
+  backgroundColor: string,
+  resizeMode?: EResizeMode
+) => {
   try {
-    addReactNativeSplashScreen(backgroundColor);
+    addReactNativeSplashScreen(backgroundColor, resizeMode);
     await generateAndroidSplashImages(imageSource);
   } catch (err) {
     console.log(err);
@@ -27,7 +32,10 @@ const addLaunchScreenBackgroundColor = (backgroundColor: string) => {
   );
 };
 
-const addReactNativeSplashScreen = (backgroundColor: string) => {
+const addReactNativeSplashScreen = (
+  backgroundColor: string,
+  resizeMode: EResizeMode = EResizeMode.CONTAIN
+) => {
   addLaunchScreenBackgroundColor(backgroundColor);
 
   copyFile(
@@ -35,7 +43,7 @@ const addReactNativeSplashScreen = (backgroundColor: string) => {
     `${ANDROID_MAIN_RES_PATH}/drawable/splashscreen.xml`
   );
   copyFile(
-    join(__dirname, '../../../../templates/android/layout/launch_screen.xml'),
+    join(__dirname, `../../../../templates/android/layout/launch_screen.${resizeMode}.xml`),
     `${ANDROID_MAIN_RES_PATH}/layout/launch_screen.xml`
   );
   applyPatch(`${ANDROID_MAIN_RES_PATH}/values/styles.xml`, {
@@ -77,7 +85,11 @@ const generateAndroidSplashImages = (imageSource: string) =>
       generateResizedAssets(
         imageSource,
         `${ANDROID_MAIN_RES_PATH}/drawable-${density}/splash_image.png`,
-        size
+        size,
+        size,
+        {
+          fit: 'inside',
+        }
       )
     )
   );

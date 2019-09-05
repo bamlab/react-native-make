@@ -1,13 +1,8 @@
 # Set the app splash screen
 
-⚠️ [`react-native-splash-screen`](https://github.com/crazycodeboy/react-native-splash-screen) is a prerequisite to use this cli plugin.  
-Install it before carrying on
+## Prerequisites
 
-- `react-native set-splash --path path-to-folder-with-image --background background-color`  
-  ⚠️ The path option is mandatory.  
-  The background color defaults to white
-
-## Additional mandatory steps
+Install [`react-native-splash-screen`](https://github.com/crazycodeboy/react-native-splash-screen)
 
 In your JS application you need to hide the splashscreen like so :
 
@@ -18,6 +13,20 @@ import SplashScreen from 'react-native-splash-screen';
 
 SplashScreen.hide();
 ```
+
+## Image requirements
+
+- Use a `.png` to preserve background transparency
+- Use a 3000px as min height and/or width
+- Output will be
+  - Rendered in "contain" mode which means it will fit both height and width while maintaining the 1:1 aspect ratio
+  - Rendered with a 10dpi margin
+
+## Generate both splash screen
+
+- `react-native set-splash --path path-to-folder-with-image --background background-color`  
+  ⚠️ The path option is mandatory.  
+  The background color defaults to white
 
 ## Generate iOS splashscreen
 
