@@ -23,11 +23,11 @@ SplashScreen.hide();
 
 We offer 3 types of Splashcreen image resize modes:
 
-|         Resize Mode | Rules                                                             | Example                                                                                                                                                                                            |
-| ------------------: | ----------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| (default) `contain` | Use max width / height without cropping,<br>The image is centered | <div style="width:200px;height:200px;background-color:red;background-image:url(./assets/splash-example.png);background-position:center;background-repeat:no-repeat;background-size:contain"></div> |
-|             `cover` | Use max width / height with cropping,<br>The image is centered    |   <div style="width:200px;height:200px;background-color:red;background-image:url(./assets/splash-example.png);background-position:center;background-repeat:no-repeat;background-size:cover"></div> |
-|            `center` | Use image width / height,<br>The image is centered                | <div style="width:200px;height:200px;background-color:red;background-image:url(./assets/splash-example.png);background-position:center;background-repeat:no-repeat;background-size: 80px;"></div>  |
+|         Resize Mode | Rules                                                             | Example                                                                                                                                                                                                                                                                 |
+| ------------------: | ----------------------------------------------------------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| (default) `contain` | Use max width / height without cropping,<br>The image is centered | <div style="width:200px;height:200px;background-color:red;background-image:url(https://raw.githubusercontent.com/bamlab/react-native-make/master/docs/assets/splash-example.png);background-position:center;background-repeat:no-repeat;background-size:contain"></div> |
+|             `cover` | Use max width / height with cropping,<br>The image is centered    |   <div style="width:200px;height:200px;background-color:red;background-image:url(https://raw.githubusercontent.com/bamlab/react-native-make/master/docs/assets/splash-example.png);background-position:center;background-repeat:no-repeat;background-size:cover"></div> |
+|            `center` | Use image width / height,<br>The image is centered                | <div style="width:200px;height:200px;background-color:red;background-image:url(https://raw.githubusercontent.com/bamlab/react-native-make/master/docs/assets/splash-example.png);background-position:center;background-repeat:no-repeat;background-size: 80px;"></div>  |
 
 ## Generate both splash screen
 
