@@ -17,23 +17,30 @@ SplashScreen.hide();
 ## Image requirements
 
 - Use a `.png` to preserve background transparency
-- Use a 3000px as min height and/or width
-- Output will be
-  - Rendered in "contain" mode which means it will fit both height and width while maintaining the 1:1 aspect ratio
-  - Rendered with a 10dpi margin
+- **3000px** as min height and/or width
+
+## Resize modes
+
+We offer 3 types of Splashcreen image resize modes:
+
+|         Resize Mode | Rules                                                             | Example                                                                                                                                                                                            |
+| ------------------: | ----------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| (default) `contain` | Use max width / height without cropping,<br>The image is centered | <div style="width:200px;height:200px;background-color:red;background-image:url(./assets/splash-example.png);background-position:center;background-repeat:no-repeat;background-size:contain"></div> |
+|             `cover` | Use max width / height with cropping,<br>The image is centered    |   <div style="width:200px;height:200px;background-color:red;background-image:url(./assets/splash-example.png);background-position:center;background-repeat:no-repeat;background-size:cover"></div> |
+|            `center` | Use image width / height,<br>The image is centered                | <div style="width:200px;height:200px;background-color:red;background-image:url(./assets/splash-example.png);background-position:center;background-repeat:no-repeat;"></div>                        |
 
 ## Generate both splash screen
 
-- `react-native set-splash --path path-to-folder-with-image --background background-color`  
+- `react-native set-splash --path <path-to-folder-with-image> --resize <[contain]|cover|center> --background "<background-color>"`  
   ⚠️ The path option is mandatory.  
   The background color defaults to white
 
 ## Generate iOS splashscreen
 
-- `react-native set-splash --platform ios --path path-to-folder-with-image --background background-color`  
+- `react-native set-splash --platform ios --path <path-to-folder-with-image> --resize <[contain]|cover|center> --background ">background-color>"`  
   ⚠️ The path option is mandatory.
 
 ## Generate Android splashscreen
 
-- `react-native set-splash --platform android --path path-to-folder-with-image --background background-color`  
+- `react-native set-splash --platform android --path <path-to-folder-with-image> --resize <[contain]|cover|center> --background ">background-color>"`  
   ⚠️ The path option is mandatory.
