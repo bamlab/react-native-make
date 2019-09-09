@@ -21,7 +21,7 @@ Once installed, plugins are available through the React Native CLI
 
 - Pull latest version
 - `cd react-native-make`
-- `yarn link`
+- Run `yarn` then `yarn link`
 - Launch a new project with `react-native init`
 - In your React Native project, `yarn link @bam.tech/react-native-make`
 - In the package.json of your React Native project, in dependencies add "@bam.tech/react-native-make" : "0.0.0"
