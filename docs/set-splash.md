@@ -31,16 +31,16 @@ We offer 3 types of Splashcreen image resize modes:
 
 ## Generate both splash screen
 
-- `react-native set-splash --path <path-to-folder-with-image> --resize <[contain]|cover|center> --background "<background-color>"`  
+- `react-native set-splash --path <path-to-image> --resize <[contain]|cover|center> --background "<background-color>"`  
   ⚠️ The path option is mandatory.  
   The background color defaults to white
 
 ## Generate iOS splashscreen
 
-- `react-native set-splash --platform ios --path <path-to-folder-with-image> --resize <[contain]|cover|center> --background ">background-color>"`  
+- `react-native set-splash --platform ios --path <path-to-image> --resize <[contain]|cover|center> --background ">background-color>"`  
   ⚠️ The path option is mandatory.
 
 ## Generate Android splashscreen
 
-- `react-native set-splash --platform android --path <path-to-folder-with-image> --resize <[contain]|cover|center> --background ">background-color>"`  
+- `react-native set-splash --platform android --path <path-to-image> --resize <[contain]|cover|center> --background ">background-color>"`  
   ⚠️ The path option is mandatory.
