@@ -3,14 +3,18 @@
 
 ## ⚙️ Setup
 
-```
+In your react-native project folder, run:
+```bash
 yarn add -D @bam.tech/react-native-make
+# OR
 npm i -D @bam.tech/react-native-make
 ```
 
 ## 📚 Usage
 
 Once installed, plugins are available through the React Native CLI
+
+You can get the list of available plugins by running `react-native -h` within your project's folder
 
 |                            Command | Description                               |
 | ---------------------------------: | :---------------------------------------- |
