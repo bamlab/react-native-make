@@ -15,7 +15,7 @@ For android, this command will generate the images in main directory : `android/
 
 ## Generate iOS icons
 
-- `react-native set-icon --platform ios --path path-to-folder-with-image`
+- `react-native set-icon --platform ios --path path-to-image`
 
 ⚠️ Requirements :
 
@@ -27,7 +27,7 @@ For android, this command will generate the images in main directory : `android/
 
 ## Generate Android icons
 
-- `react-native set-icon --platform android --path path-to-folder-with-image`
+- `react-native set-icon --platform android --path path-to-image`
 
 ⚠️ Requirements :
 
@@ -42,5 +42,5 @@ This command will generate the images in main directory : `android/app/src/main/
 
 From Android 8.0, we use android's adaptive icons. With a transparent picture, you can chose the color of the background with :
 
-- `react-native set-icon --platform android --path path-to-folder-with-image --background color`  
+- `react-native set-icon --platform android --path path-to-image --background color`  
   ⚠️ by default, on android, the background of a transparent image is white
