@@ -1,6 +1,6 @@
 # Set the app icon
 
-`react-native set-icon --path path-to-folder-with-image`
+`react-native set-icon --path path-to-image`
 
 ⚠️ Requirements :
 
