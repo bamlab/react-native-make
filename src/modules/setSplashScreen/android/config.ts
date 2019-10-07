@@ -19,6 +19,6 @@ const androidSplashImages = [
   },
 ];
 
-export const config = {
+export const generatorConfig = {
   androidSplashImages,
 };
