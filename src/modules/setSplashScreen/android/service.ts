@@ -31,7 +31,7 @@ export class AndroidSplashScreenService {
   private async addLaunchScreenBackgroundColor(backgroundColor: string): Promise<void> {
     replaceInFile(
       join(__dirname, '../../../../templates/android/values/colors-splash.xml'),
-      `${ANDROID_MAIN_RES_PATH}/values/colors-splash.xml`,
+      join(this._config.project.android.stringsPath, '../colors-splash.xml'),
       [
         {
           oldContent: /{{splashprimary}}/g,
@@ -49,19 +49,21 @@ export class AndroidSplashScreenService {
 
     copyFile(
       join(__dirname, '../../../../templates/android/drawable/splashscreen.xml'),
-      `${ANDROID_MAIN_RES_PATH}/drawable/splashscreen.xml`
+      join(this._config.project.android.assetsPath, '../res/drawable/splashscreen.xm')
     );
     copyFile(
       join(__dirname, `../../../../templates/android/layout/launch_screen.${resizeMode}.xml`),
-      `${ANDROID_MAIN_RES_PATH}/layout/launch_screen.xml`
+      join(this._config.project.android.assetsPath, '../res/layout/launch_screen.xml')
     );
-    applyPatch(`${ANDROID_MAIN_RES_PATH}/values/styles.xml`, {
+    applyPatch(join(this._config.project.android.stringsPath, '../styles.xml'), {
       pattern: /^.*<resources>.*[\r\n]/g,
       patch: readFile(join(__dirname, '../../../../templates/android/values/styles-splash.xml')),
     });
 
-    const packageJson = require(join(process.cwd(), './package'));
-    const mainActivityPath = `${ANDROID_MAIN_PATH}/java/com/${packageJson.name.toLowerCase()}/MainActivity.java`;
+    const mainActivityPath = join(
+      this._config.project.android.mainFilePath,
+      '../MainActivity.java'
+    );
 
     applyPatch(mainActivityPath, {
       pattern: /^(.+?)(?=import)/gs,
@@ -93,7 +95,10 @@ export class AndroidSplashScreenService {
       generatorConfig.androidSplashImages.map(({ size, density }) =>
         generateResizedAssets(
           imageSource,
-          `${ANDROID_MAIN_RES_PATH}/drawable-${density}/splash_image.png`,
+          join(
+            this._config.project.android.assetsPath,
+            `../res/drawable-${density}/splash_image.png`
+          ),
           size,
           size,
           {
