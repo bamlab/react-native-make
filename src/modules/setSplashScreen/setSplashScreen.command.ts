@@ -28,6 +28,10 @@ export const setSplashScreenCommand: Command = {
       description: 'background color',
       default: '#ffffff',
     },
+    {
+      name: '--bundle [string]',
+      description: 'com.example.app'
+    }
   ],
   examples: [
     {
@@ -43,7 +47,7 @@ export const setSplashScreenCommand: Command = {
     {
       desc: 'set the splash screen for Android',
       cmd:
-        'react-native set-splash --platform android --path <path-to-image> --resize <cover|contain|center> --background "<background-color>"',
+        'react-native set-splash --platform android --path <path-to-image> --resize <cover|contain|center> --background "<background-color>" --bundle "com.example.app"',
     },
   ],
 };

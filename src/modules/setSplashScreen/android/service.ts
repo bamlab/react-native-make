@@ -9,10 +9,11 @@ import { EResizeMode } from '../../../services/type';
 export const addAndroidSplashScreen = async (
   imageSource: string,
   backgroundColor: string,
-  resizeMode?: EResizeMode
+  resizeMode?: EResizeMode,
+  packageName?: string
 ) => {
   try {
-    addReactNativeSplashScreen(backgroundColor, resizeMode);
+    addReactNativeSplashScreen(backgroundColor, resizeMode, packageName);
     await generateAndroidSplashImages(imageSource);
   } catch (err) {
     console.log(err);
@@ -34,7 +35,8 @@ const addLaunchScreenBackgroundColor = (backgroundColor: string) => {
 
 const addReactNativeSplashScreen = (
   backgroundColor: string,
-  resizeMode: EResizeMode = EResizeMode.CONTAIN
+  resizeMode: EResizeMode = EResizeMode.CONTAIN,
+  packageName: string
 ) => {
   addLaunchScreenBackgroundColor(backgroundColor);
 
@@ -52,7 +54,8 @@ const addReactNativeSplashScreen = (
   });
 
   const packageJson = require(join(process.cwd(), './package'));
-  const mainActivityPath = `${ANDROID_MAIN_PATH}/java/com/${packageJson.name.toLowerCase()}/MainActivity.java`;
+  const packageNameDirectory = packageName ? packageName.replace(/\./g, '/') : `com/${packageJson.name.toLowerCase()}`
+  const mainActivityPath = `${ANDROID_MAIN_PATH}/java/${packageNameDirectory}/MainActivity.java`;
 
   applyPatch(mainActivityPath, {
     pattern: /^(.+?)(?=import)/gs,
