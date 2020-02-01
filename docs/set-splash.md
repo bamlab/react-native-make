@@ -43,5 +43,5 @@ We offer 3 types of Splashcreen image resize modes:
 
 ## Generate Android splashscreen
 
-- `react-native set-splash --platform android --path <path-to-image> --resize <[contain]|cover|center> --background ">background-color>"`  
+- `react-native set-splash --platform android --path <path-to-image> --resize <[contain]|cover|center> --background ">background-color>" --bundle <com.example.app>`  
   ⚠️ The path option is mandatory.
