@@ -18,6 +18,10 @@
       <constraints>
         <constraint firstItem="mLz-pt-VGN" firstAttribute="centerX" secondItem="iN0-l3-epB" secondAttribute="centerX" id="2lH-sI-4y6"/>
         <constraint firstItem="mLz-pt-VGN" firstAttribute="centerY" secondItem="iN0-l3-epB" secondAttribute="centerY" id="IxD-gR-6m0"/>
+        <constraint firstAttribute="bottom" secondItem="mLz-pt-VGN" secondAttribute="bottom" id="dFM-pA-QKA"/>
+        <constraint firstAttribute="trailing" secondItem="mLz-pt-VGN" secondAttribute="trailing" id="jQF-px-3if"/>
+        <constraint firstItem="mLz-pt-VGN" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" id="t85-eb-XUP"/>
+        <constraint firstItem="mLz-pt-VGN" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="xaP-gZ-Mga"/>
       </constraints>
     </view>
   </objects>
