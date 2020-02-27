@@ -5,6 +5,7 @@ import { ANDROID_MAIN_PATH, ANDROID_MAIN_RES_PATH } from '../../config';
 import { generateResizedAssets } from '../../../services/image.processing';
 import { config } from './config';
 import { EResizeMode } from '../../../services/type';
+import { getAndroidPackageName, convertAndroidPackageNameToUri } from '../utils';
 
 export const addAndroidSplashScreen = async (
   imageSource: string,
@@ -51,8 +52,9 @@ const addReactNativeSplashScreen = (
     patch: readFile(join(__dirname, '../../../../templates/android/values/styles-splash.xml')),
   });
 
-  const packageJson = require(join(process.cwd(), './package'));
-  const mainActivityPath = `${ANDROID_MAIN_PATH}/java/com/${packageJson.name.toLowerCase()}/MainActivity.java`;
+  const mainActivityPath = `${ANDROID_MAIN_PATH}/java/${convertAndroidPackageNameToUri(
+    getAndroidPackageName()
+  )}/MainActivity.java`;
 
   applyPatch(mainActivityPath, {
     pattern: /^(.+?)(?=import)/gs,
