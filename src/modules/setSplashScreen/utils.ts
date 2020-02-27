@@ -9,7 +9,7 @@ import { readFile } from '../../services/file.processing';
 const ANDROID_MAIN_MANIFEST_PATH = `${ANDROID_MAIN_PATH}/AndroidManifest.xml`;
 
 //Choosing to read file content to fetch package value rather than adding package to parse xml
-const ANDROID_PACKAGE_EXP = new RegExp(/package\s*=\s*\"(.+)\"/);
+const ANDROID_PACKAGE_EXP = new RegExp(/package=\"(.+)\"/);
 
 function fetchFileLocation(file: string): string {
   let filePath;
@@ -26,7 +26,8 @@ function fetchFileLocation(file: string): string {
  */
 export function getAndroidPackageName(): string {
   const appBuildFile = readFile(fetchFileLocation('ANDROID_MANIFEST_PATH')).toString();
-  return appBuildFile.match(ANDROID_PACKAGE_EXP)[1].toString();
+  const packageName = appBuildFile.match(ANDROID_PACKAGE_EXP)[1];
+  return packageName && packageName.toString();
 }
 
 /**
