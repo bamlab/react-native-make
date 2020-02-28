@@ -17,6 +17,22 @@ export const generateResizedAssets = async (
     .toFile(destinationPath);
 };
 
+export const generateResizedAssetsWithoutAlpha = async (
+  sourcePath: string,
+  destinationPath: string,
+  width: number,
+  height: number = width,
+  options: ResizeOptions = {
+    fit: 'contain',
+  }
+) => {
+  createDirectoryIfNotExists(destinationPath);
+  return sharp(normalize(sourcePath))
+    .resize(width, height, options)
+    .removeAlpha()
+    .toFile(destinationPath);
+};
+
 export const checkImageIsSquare = async (sourcePath: string) => {
   const { width, height } = await sharp(normalize(sourcePath)).metadata();
   if (width !== height) {
