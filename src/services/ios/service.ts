@@ -1,5 +1,6 @@
 import { join } from 'path';
 import { copyFile } from '../file.processing';
+import { getIosPackageName } from '../../utils';
 
 export enum EImageSetType {
   IMAGE = 'imageset',
@@ -10,8 +11,7 @@ export const addIosImageSetContents = (
   imageSetName: string,
   setType: EImageSetType = EImageSetType.ICON
 ) => {
-  const packageJson = require(join(process.cwd(), './package'));
-  const iosImageFolder = `./ios/${packageJson.name}/Images.xcassets/${imageSetName}.${setType}`;
+  const iosImageFolder = `./ios/${getIosPackageName()}/Images.xcassets/${imageSetName}.${setType}`;
   copyFile(
     join(__dirname, `../../../templates/ios/${imageSetName}SetContents.json`),
     `${iosImageFolder}/Contents.json`

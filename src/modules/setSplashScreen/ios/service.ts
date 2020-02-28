@@ -10,6 +10,7 @@ import {
 } from '../../../services/file.processing';
 import { getNormalizedRGBAColors } from '../../../services/color.processing';
 import { EResizeMode } from '../../../services/type';
+import { getIosPackageName } from '../../../utils';
 
 export const addIosSplashScreen = async (
   imageSource: string,
@@ -27,8 +28,7 @@ export const addIosSplashScreen = async (
 };
 
 const configureSplashScreen = () => {
-  const packageJson = require(join(process.cwd(), './package'));
-  const appDelegatePath = `./ios/${packageJson.name}/AppDelegate.m`;
+  const appDelegatePath = `./ios/${getIosPackageName()}/AppDelegate.m`;
   applyPatch(appDelegatePath, {
     pattern: /^(.+?)(?=\#import)/gs,
     patch: '#import "RNSplashScreen.h"\n',
@@ -47,11 +47,10 @@ const addSplashScreenXib = (
   resizeMode: EResizeMode = EResizeMode.CONTAIN
 ) => {
   const { red, green, blue, alpha } = getNormalizedRGBAColors(backgroundColor);
-  const packageJson = require(join(process.cwd(), './package'));
 
   replaceInFile(
     join(__dirname, `../../../../templates/ios/LaunchScreen.${resizeMode}.xib`),
-    `./ios/${packageJson.name}/Base.lproj/LaunchScreen.xib`,
+    `./ios/${getIosPackageName()}/Base.lproj/LaunchScreen.xib`,
     [
       {
         oldContent: /{{background-rgba-red}}/g,

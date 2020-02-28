@@ -5,7 +5,7 @@ import { ANDROID_MAIN_PATH, ANDROID_MAIN_RES_PATH } from '../../config';
 import { generateResizedAssets } from '../../../services/image.processing';
 import { config } from './config';
 import { EResizeMode } from '../../../services/type';
-import { getAndroidPackageName, convertAndroidPackageNameToUri } from '../utils';
+import { getAndroidPackageName, convertAndroidPackageNameToUri } from '../../../utils';
 
 export const addAndroidSplashScreen = async (
   imageSource: string,
