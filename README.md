@@ -4,11 +4,14 @@
 ## ⚙️ Setup
 
 In your react-native project folder, run:
+
 ```bash
 yarn add -D @bam.tech/react-native-make
 # OR
 npm i -D @bam.tech/react-native-make
 ```
+
+**Please note:** This plugin only supports react-native-cli v2+
 
 ## 📚 Usage
 
