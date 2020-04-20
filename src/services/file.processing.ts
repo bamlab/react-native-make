@@ -24,13 +24,6 @@ export const applyPatch = (
   }
 };
 
-export const applyPatchByMatchedGroups = (
-  path: string,
-  patch: { patch: string; pattern: string | RegExp }
-) => {
-  writeFileSync(path, readFileSync(path, 'utf8').replace(patch.pattern, patch.patch));
-};
-
 export const replaceInFile = (
   sourcePath: string,
   destinationPath: string,
