@@ -24,6 +24,7 @@ export const addIosSplashScreen = async (
     const iosSplashImageFolder = addIosImageSetContents('SplashImage', EImageSetType.IMAGE);
     await generateIosSplashImages(imageSource, iosSplashImageFolder);
     copyStoryBoardToProject();
+    setNewSplashScreenFileRefInInfoPlist();
   } catch (err) {
     console.log(err);
   }
@@ -51,34 +52,15 @@ const copyStoryBoardToProject = () => {
   );
 };
 
-const addSplashScreenXib = (
-  backgroundColor: string,
-  resizeMode: EResizeMode = EResizeMode.CONTAIN
-) => {
-  const { red, green, blue, alpha } = getNormalizedRGBAColors(backgroundColor);
-
-  replaceInFile(
-    join(__dirname, `../../../../templates/ios/LaunchScreen.${resizeMode}.xib`),
-    `./ios/${getIosPackageName()}/Base.lproj/LaunchScreen.xib`,
-    [
-      {
-        oldContent: /{{background-rgba-red}}/g,
-        newContent: `${red}`,
-      },
-      {
-        oldContent: /{{background-rgba-green}}/g,
-        newContent: `${green}`,
-      },
-      {
-        oldContent: /{{background-rgba-blue}}/g,
-        newContent: `${blue}`,
-      },
-      {
-        oldContent: /{{background-rgba-alpha}}/g,
-        newContent: `${alpha}`,
-      },
-    ]
-  );
+const setNewSplashScreenFileRefInInfoPlist = () => {
+  const infoPlistPath = `./ios/${getIosPackageName()}/Info.plist`;
+  const UILaunchStoryboardNamePattern = /(<key>UILaunchStoryboardName<\/key>[ \t\n]*<string>)[a-zA-Z]+(<\/string>)/g;
+  replaceInFile(infoPlistPath, infoPlistPath, [
+    {
+      oldContent: UILaunchStoryboardNamePattern,
+      newContent: `$1${config.iosStoryboardName}$2`,
+    },
+  ]);
 };
 
 // const addSplashScreenXib = (
