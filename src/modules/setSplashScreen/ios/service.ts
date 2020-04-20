@@ -7,6 +7,7 @@ import {
   applyPatchByMatchedGroups,
   readFile,
   replaceInFile,
+  copyFile,
 } from '../../../services/file.processing';
 import { getNormalizedRGBAColors } from '../../../services/color.processing';
 import { EResizeMode } from '../../../services/type';
@@ -22,6 +23,7 @@ export const addIosSplashScreen = async (
     // configureSplashScreen();
     const iosSplashImageFolder = addIosImageSetContents('SplashImage', EImageSetType.IMAGE);
     await generateIosSplashImages(imageSource, iosSplashImageFolder);
+    copyStoryBoardToProject();
   } catch (err) {
     console.log(err);
   }
@@ -42,6 +44,11 @@ export const addIosSplashScreen = async (
 //   }
 // };
 
+const copyStoryBoardToProject = () => {
+  copyFile(
+    join(__dirname, `../../../../templates/ios/SplashScreen.storyboard`),
+    `./ios/${config.iosStoryboardName}.storyboard`
+  );
 };
 
 const addSplashScreenXib = (
