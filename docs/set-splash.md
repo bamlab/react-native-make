@@ -18,7 +18,7 @@ SplashScreen.hide();
 
 - Use a `.png` to preserve background transparency
 - **3000px** as min height and/or width
-- For **cover** splashscreens, preserve a 1/3 padding  for important content to avoid clipping a Logo or Text
+- For **cover** splashscreens, preserve a 1/3 padding for important content to avoid clipping a Logo or Text
 
 ## Resize modes
 
@@ -32,14 +32,17 @@ We offer 3 types of Splashcreen image resize modes:
 
 ## Generate both splash screen
 
+- open your file `myProject.xcworkspace` in XCode
+- right-click on your project folder > "New file..." > "Launch Screen" > "Save as: SplashScreen"
 - `react-native set-splash --path <path-to-image> --resize <[contain]|cover|center> --background "<background-color>"`  
   ⚠️ The path option is mandatory.  
   The background color defaults to white
 
 ## Generate iOS splashscreen
 
-- `react-native set-splash --platform ios --path <path-to-image> --resize <[contain]|cover|center> --background ">background-color>"`  
-  ⚠️ The path option is mandatory.
+- open your file `myProject.xcworkspace` in XCode
+- right-click on your project folder > "New file..." > "Launch Screen" > "Save as: SplashScreen"
+- `react-native set-splash --platform ios --path <path-to-image>`
 
 ## Generate Android splashscreen
 
