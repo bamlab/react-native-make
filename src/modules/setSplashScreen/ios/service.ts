@@ -2,7 +2,8 @@ import { addIosImageSetContents, EImageSetType } from '../../../services/ios/ser
 import { generateResizedAssets } from '../../../services/image.processing';
 import { config } from './config';
 import { join } from 'path';
-import { replaceInFile, copyFile } from '../../../services/file.processing';
+import { replaceInFile } from '../../../services/file.processing';
+import { getNormalizedRGBAColors } from '../../../services/color.processing';
 import { EResizeMode } from '../../../services/type';
 import { getIosPackageName } from '../../../utils';
 
@@ -14,17 +15,24 @@ export const addIosSplashScreen = async (
   try {
     const iosSplashImageFolder = addIosImageSetContents('SplashImage', EImageSetType.IMAGE);
     await generateIosSplashImages(imageSource, iosSplashImageFolder);
-    copyStoryBoardToProject();
+    setBackgroundColorToStoryBoard(backgroundColor);
     setNewSplashScreenFileRefInInfoPlist();
   } catch (err) {
     console.log(err);
   }
 };
 
-const copyStoryBoardToProject = () => {
-  copyFile(
+const setBackgroundColorToStoryBoard = (backgroundColor: string) => {
+  const { red, green, blue, alpha } = getNormalizedRGBAColors(backgroundColor);
+  replaceInFile(
     join(__dirname, `../../../../templates/ios/SplashScreen.storyboard`),
-    `./ios/${config.iosStoryboardName}.storyboard`
+    `./ios/${config.iosStoryboardName}.storyboard`,
+    [
+      {
+        oldContent: /<color.*key="backgroundColor".*\/>/g,
+        newContent: `<color key="backgroundColor" red="${red}" green="${green}" blue="${blue}" alpha="${alpha}" colorSpace="custom" customColorSpace="sRGB"/>`,
+      },
+    ]
   );
 };
 
@@ -40,7 +48,7 @@ const setNewSplashScreenFileRefInInfoPlist = () => {
 };
 
 const generateIosSplashImages = (imageSource: string, iosSplashImageFolder: string) => {
-  const { multipliers, size, backgroundColor } = config.iosSplashImage;
+  const { multipliers, size } = config.iosSplashImage;
   return Promise.all(
     multipliers.map(multiplier =>
       generateResizedAssets(
