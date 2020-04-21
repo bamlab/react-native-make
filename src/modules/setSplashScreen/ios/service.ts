@@ -10,22 +10,22 @@ import { getIosPackageName } from '../../../utils';
 export const addIosSplashScreen = async (
   imageSource: string,
   backgroundColor: string,
-  resizeMode?: EResizeMode
+  resizeMode: EResizeMode
 ) => {
   try {
     const iosSplashImageFolder = addIosImageSetContents('SplashImage', EImageSetType.IMAGE);
     await generateIosSplashImages(imageSource, iosSplashImageFolder);
-    setBackgroundColorToStoryBoard(backgroundColor);
+    generateStoryboardFile(backgroundColor, resizeMode);
     setNewSplashScreenFileRefInInfoPlist();
   } catch (err) {
     console.log(err);
   }
 };
 
-const setBackgroundColorToStoryBoard = (backgroundColor: string) => {
+const generateStoryboardFile = (backgroundColor: string, resizeMode: EResizeMode) => {
   const { red, green, blue, alpha } = getNormalizedRGBAColors(backgroundColor);
   replaceInFile(
-    join(__dirname, `../../../../templates/ios/SplashScreen.storyboard`),
+    join(__dirname, `../../../../templates/ios/SplashScreen.${resizeMode}.storyboard`),
     `./ios/${config.iosStoryboardName}.storyboard`,
     [
       {
