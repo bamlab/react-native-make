@@ -46,3 +46,5 @@ We will always answer you with pleasure 😁
 <br><hr/>
 
 **Disclaimer:** _To better understand your usage of this tool, basic analytics have been enabled. It only records commands usage as anonymous page views and does not identify users in any way_
+
+## [Changelog](./CHANGELOG.md)
