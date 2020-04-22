@@ -33,6 +33,10 @@ You can get the list of available plugins by running `react-native -h` within yo
 - In your React Native project, `yarn link @bam.tech/react-native-make`
 - In the package.json of your React Native project, in dependencies add "@bam.tech/react-native-make" : "0.0.0"
 
+## Changes in 3.0.0
+
+Since 3.0.0, splashscreens for iOS are created via Xcode’s storyboard, so as to meet Apple's new requirements as of April 2020.
+
 ## 👉 About Bam
 
 We are a 100 people company developing and designing multiplatform applications with [React Native](https://www.bam.tech/agence-react-native-paris) using the Lean & Agile methodology. To get more information on the solutions that would suit your needs, feel free to get in touch by [email](mailto://contact@bam.tech) or through or [contact form](https://www.bam.tech/en/contact)!

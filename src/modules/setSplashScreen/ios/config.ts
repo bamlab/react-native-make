@@ -4,6 +4,9 @@ const iosSplashImage = {
   backgroundColor: { r: 0, g: 0, b: 0, alpha: 0 },
 };
 
+const iosStoryboardName = 'SplashScreen';
+
 export const config = {
   iosSplashImage,
+  iosStoryboardName,
 };
