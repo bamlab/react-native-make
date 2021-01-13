@@ -15,11 +15,11 @@ export const setSplashScreenTask = async (
       await addIosSplashScreen(imagePath, backgroundColor, resizeMode);
       break;
     case EPlatform.ANDROID:
-      await addAndroidSplashScreen(imagePath, backgroundColor, resizeMode);
+      await addAndroidSplashScreen(imagePath, backgroundColor);
       break;
     case EPlatform.ALL:
       await addIosSplashScreen(imagePath, backgroundColor, resizeMode);
-      await addAndroidSplashScreen(imagePath, backgroundColor, resizeMode);
+      await addAndroidSplashScreen(imagePath, backgroundColor);
       break;
     default:
       console.log("We don't support this platform yet");

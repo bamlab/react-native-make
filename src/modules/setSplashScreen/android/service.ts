@@ -1,19 +1,16 @@
 import { getHexColor } from '../../../services/color.processing';
-import { applyPatch, copyFile, readFile, replaceInFile } from '../../../services/file.processing';
+import { replaceInFile } from '../../../services/file.processing';
 import { join } from 'path';
-import { ANDROID_MAIN_PATH, ANDROID_MAIN_RES_PATH } from '../../config';
+import { ANDROID_MAIN_RES_PATH } from '../../config';
 import { generateResizedAssets } from '../../../services/image.processing';
 import { config } from './config';
-import { EResizeMode } from '../../../services/type';
-import { getAndroidPackageName, convertAndroidPackageNameToUri } from '../../../utils';
 
 export const addAndroidSplashScreen = async (
   imageSource: string,
   backgroundColor: string,
-  resizeMode?: EResizeMode
 ) => {
   try {
-    addReactNativeSplashScreen(backgroundColor, resizeMode);
+    addLaunchScreenBackgroundColor(backgroundColor);
     await generateAndroidSplashImages(imageSource);
   } catch (err) {
     console.log(err);
@@ -31,54 +28,6 @@ const addLaunchScreenBackgroundColor = (backgroundColor: string) => {
       },
     ]
   );
-};
-
-const addReactNativeSplashScreen = (
-  backgroundColor: string,
-  resizeMode: EResizeMode = EResizeMode.CONTAIN
-) => {
-  addLaunchScreenBackgroundColor(backgroundColor);
-
-  copyFile(
-    join(__dirname, '../../../../templates/android/drawable/splashscreen.xml'),
-    `${ANDROID_MAIN_RES_PATH}/drawable/splashscreen.xml`
-  );
-  copyFile(
-    join(__dirname, `../../../../templates/android/layout/launch_screen.${resizeMode}.xml`),
-    `${ANDROID_MAIN_RES_PATH}/layout/launch_screen.xml`
-  );
-  applyPatch(`${ANDROID_MAIN_RES_PATH}/values/styles.xml`, {
-    pattern: /^.*<resources>.*[\r\n]/g,
-    patch: readFile(join(__dirname, '../../../../templates/android/values/styles-splash.xml')),
-  });
-
-  const mainActivityPath = `${ANDROID_MAIN_PATH}/java/${convertAndroidPackageNameToUri(
-    getAndroidPackageName()
-  )}/MainActivity.java`;
-
-  applyPatch(mainActivityPath, {
-    pattern: /^(.+?)(?=import)/gs,
-    patch: 'import android.os.Bundle;\n' + 'import org.devio.rn.splashscreen.SplashScreen;\n',
-  });
-
-  const onCreateRegExp = /^.*onCreate.*[\r\n]/gm;
-
-  if (readFile(mainActivityPath).match(onCreateRegExp)) {
-    applyPatch(mainActivityPath, {
-      pattern: onCreateRegExp,
-      patch: 'SplashScreen.show(this, R.style.SplashScreenTheme);',
-    });
-  } else {
-    applyPatch(mainActivityPath, {
-      pattern: /^.*MainActivity.*[\r\n]/gm,
-      patch:
-        '    @Override\n' +
-        '    protected void onCreate(Bundle savedInstanceState) {\n' +
-        '        SplashScreen.show(this, R.style.SplashScreenTheme);\n' +
-        '        super.onCreate(savedInstanceState);\n' +
-        '    }',
-    });
-  }
 };
 
 const generateAndroidSplashImages = (imageSource: string) =>
