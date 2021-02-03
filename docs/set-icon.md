@@ -6,7 +6,7 @@
 
 - The path option is mandatory.
 - The image has to be square.
-- Don't use a transparent image. Not recommended on ios.
+- Don't use a transparent image. Not allowed on both plarforms.
 - Minimum size of the image is 1024x1024.
 - It uses android adaptive icons, use guidelines : https://medium.com/google-design/designing-adaptive-icons-515af294c783
 - Format accepted : png and jpeg.
@@ -21,7 +21,7 @@ For android, this command will generate the images in main directory : `android/
 
 - The path option is mandatory.
 - The image has to be square.
-- Don't use a transparent image. Not recommended on ios.
+- Don't use a transparent image. Not allowed on ios.
 - Minimum size of the image is 1024x1024.
 - Format accepted : png and jpeg.
 
@@ -33,7 +33,7 @@ For android, this command will generate the images in main directory : `android/
 
 - The path option is mandatory.
 - The image has to be square.
-- Don't use a transparent image. Not recommended on ios.
+- Don't use a transparent image. Not allowed on android.
 - Minimum size of the image is 1024x1024.
 - It uses android adaptive icons, use guidelines : https://medium.com/google-design/designing-adaptive-icons-515af294c783
 - Format accepted : png and jpeg.
