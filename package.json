@@ -1,6 +1,6 @@
 {
   "name": "@bam.tech/react-native-make",
-  "version": "3.0.1",
+  "version": "3.0.2",
   "main": "modules/index.js",
   "license": "MIT",
   "repository": {
@@ -24,7 +24,7 @@
   "dependencies": {
     "color-string": "1.5.3",
     "colors": "1.3.3",
-    "sharp": "0.27.0",
+    "sharp": "0.28.0",
     "universal-analytics": "0.4.20"
   },
   "devDependencies": {
