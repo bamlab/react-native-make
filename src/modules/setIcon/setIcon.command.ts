@@ -28,16 +28,16 @@ export const setIconCommand: Command = {
     {
       desc: 'set the app icon for both devices',
       cmd:
-        'react-native set-icon --path <path-to-image> --background <background-color-for-android>',
+        'react-native set-icon --path <path-to-image> --background <background-color>',
     },
     {
       desc: 'set the app icon for iOS',
       cmd: 'react-native set-icon --platform ios --path <path-to-image>',
     },
     {
-      desc: 'set the app icon for both devices',
+      desc: 'set the app icon for Android',
       cmd:
-        'react-native set-icon --platform android --path <path-to-image> --background <background-color>',
+        'react-native set-icon --platform android --path <path-to-image> --background <background-color-for-android>',
     },
   ],
 };
